@@ -1,9 +1,10 @@
 {
   "schemaVersion": 1,
-  "id": "permasnow",
-  "version": "0.1.0",
-  "icon": "assets/permasnow/icon.png",
+  "id": "%mod_id%",
+  "version": "%version%",
+  "icon": "assets/%mod_id%/icon.png",
   "name": "Permasnow",
+  "description": "Adds unmeltable cold stuff",
   "authors": ["thebluetropics"],
   "license": "MIT",
   "environment": "*",
@@ -18,7 +19,7 @@
   "mixins": [
     {
       "environment": "*",
-      "config": "permasnow.common.mixins.json"
+      "config": "%mod_id%.common.mixins.json"
     }
   ],
   "depends": {

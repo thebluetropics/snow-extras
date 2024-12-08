@@ -3,10 +3,11 @@ plugins {
   id("maven-publish")
 }
 
+val artifactName = properties["artifact_name"] as String
 val minecraftVersion = properties["minecraft_version"] as String
 
 base {
-  archivesName = "${properties["artifact_name"].toString()}-fabric-${minecraftVersion}"
+  archivesName = "${artifactName}-fabric-${minecraftVersion}"
 }
 
 dependencies {
@@ -19,6 +20,15 @@ dependencies {
 loom {
   splitEnvironmentSourceSets()
 
+  runs {
+    named("client") {
+      runDir = "run/client"
+    }
+    named("server") {
+      runDir = "run/server"
+    }
+  }
+
   mods {
     create(properties["mod_id"].toString()) {
       sourceSet("main")
@@ -28,13 +38,43 @@ loom {
 
 java {
   toolchain.languageVersion = JavaLanguageVersion.of(21)
+
+  sourceCompatibility = JavaVersion.VERSION_21
+  targetCompatibility = JavaVersion.VERSION_21
+
   withSourcesJar()
+}
+
+tasks.withType(JavaCompile::class.java).configureEach {
+  options.encoding = "UTF-8"
+  options.release = 21
+}
+
+tasks.processResources {
+  filesMatching("fabric.mod.json") {
+    filter { line ->
+      Regex("%([a-z_]+)%").replace(line) { match ->
+        properties[match.groupValues[1]]?.toString() ?: match.value
+      }
+    }
+  }
+}
+
+tasks.named<Jar>("jar") {
+  from("LICENSE") {
+    rename {
+      "LICENSE-${artifactName}"
+    }
+  }
 }
 
 publishing {
   publications {
     create<MavenPublication>("mavenJava") {
-      artifactId = base.archivesName.get() + "-${version}"
+      groupId    = project.group.toString()
+      artifactId = project.base.archivesName.get()
+      version    = project.version.toString()
+
       from(components["java"])
     }
   }
@@ -53,8 +93,4 @@ publishing {
       }
     }
   }
-}
-
-tasks.withType(JavaCompile::class.java).configureEach {
-  options.encoding = "UTF-8"
 }

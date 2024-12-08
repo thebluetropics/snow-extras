@@ -1,1 +1,1 @@
-An example Fabric mod.
+Adds unmeltable cold stuff.
