@@ -14,7 +14,7 @@ import java.util.Objects;
 
 public class PermasnowMod implements ModInitializer {
   public static final String ID = "permasnow";
-  public static final Logger LOGGER = LoggerFactory.getLogger(ID);
+  public static final Logger LOGGER = LoggerFactory.getLogger(PermasnowMod.class);
 
   @Override
   public void onInitialize() {
