@@ -17,7 +17,12 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(PowderSnowBucketItem.class)
 public class PowderSnowBucketItemMixin {
-  @Inject(at = @At("HEAD"), method = "useOnBlock", cancellable = true)
+  /// Allows snow and ice block be converted into it's eternal variant.
+  @Inject(
+    at = @At("HEAD"),
+    method = "useOnBlock(Lnet/minecraft/item/ItemUsageContext;)Lnet/minecraft/util/ActionResult;",
+    cancellable = true
+  )
   private void useOnBlock(ItemUsageContext context, CallbackInfoReturnable<ActionResult> info) {
     var world = context.getWorld();
     var player = context.getPlayer();
@@ -25,6 +30,7 @@ public class PowderSnowBucketItemMixin {
     var blockPos = context.getBlockPos();
     var blockState = world.getBlockState(blockPos);
 
+    // Convert snow into eternal snow
     if (blockState.isOf(Blocks.SNOW)) {
       world.setBlockState(
         blockPos,
@@ -34,46 +40,23 @@ public class PowderSnowBucketItemMixin {
       );
 
       if (player != null && !player.isCreative()) {
-        player.setStackInHand(
-          context.getHand(),
-          Items.BUCKET.getDefaultStack()
-        );
+        player.setStackInHand(context.getHand(), Items.BUCKET.getDefaultStack());
       }
 
-      world.playSound(
-        null,
-        blockPos,
-        SoundEvents.BLOCK_SNOW_PLACE,
-        SoundCategory.BLOCKS,
-        1.0f,
-        1.0f
-      );
+      world.playSound(null, blockPos, SoundEvents.BLOCK_SNOW_PLACE, SoundCategory.BLOCKS, 1.0f, 1.0f);
 
       info.setReturnValue(ActionResult.SUCCESS);
     }
 
+    // Convert ice into eternal ice
     if (blockState.isOf(Blocks.ICE)) {
-      world.setBlockState(
-        blockPos,
-        ModBlocks.ETERNAL_ICE.getDefaultState(),
-        Block.NOTIFY_LISTENERS
-      );
+      world.setBlockState(blockPos, ModBlocks.ETERNAL_ICE.getDefaultState(), Block.NOTIFY_LISTENERS);
 
       if (player != null && !player.isCreative()) {
-        player.setStackInHand(
-          context.getHand(),
-          Items.BUCKET.getDefaultStack()
-        );
+        player.setStackInHand(context.getHand(), Items.BUCKET.getDefaultStack());
       }
 
-      world.playSound(
-        null,
-        blockPos,
-        SoundEvents.BLOCK_SNOW_PLACE,
-        SoundCategory.BLOCKS,
-        1.0f,
-        1.0f
-      );
+      world.playSound(null, blockPos, SoundEvents.BLOCK_SNOW_PLACE, SoundCategory.BLOCKS, 1.0f, 1.0f);
 
       info.setReturnValue(ActionResult.SUCCESS);
     }
