@@ -1,5 +1,9 @@
 {
   "block.permasnow.eternal_ice": "Eternal Ice",
   "block.permasnow.eternal_snow": "Eternal Snow",
-  "itemGroup.permasnow.permasnow": "Permasnow"
+  "itemGroup.permasnow.permasnow": "Permasnow",
+
+  "modmenu.nameTranslation.solid_grass_block": "Permasnow",
+  "modmenu.descriptionTranslation.modmenu": "Adds unmeltable cold stuff",
+  "modmenu.summaryTranslation.modmenu": "Adds unmeltable cold stuff"
 }

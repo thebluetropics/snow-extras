@@ -5,8 +5,30 @@
   "icon": "assets/%mod_id%/icon.png",
   "name": "Permasnow",
   "description": "Adds unmeltable cold stuff",
-  "authors": ["thebluetropics"],
+  "authors": [
+    {
+      "name": "thebluetropics",
+      "contact": {
+        "email": "thebluetropics@gmail.com",
+        "homepage": "https://github.com/thebluetropics"
+      }
+    }
+  ],
+  "contact": {
+    "homepage": "https://github.com/thebluetropics/fabric-example-mod",
+    "sources": "https://github.com/thebluetropics/fabric-example-mod",
+    "issues": "https://github.com/thebluetropics/fabric-example-mod/issues"
+  },
+  "contributors": [],
   "license": "MIT",
+  "custom": {
+    "modmenu": {
+      "links": {
+        "modmenu.discord": "https://discord.com/invite/A9hgghDk48"
+      },
+      "update_checker": false
+    }
+  },
   "environment": "*",
   "entrypoints": {
     "main": [
