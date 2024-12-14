@@ -3,6 +3,7 @@
   "package": "io.github.thebluetropics.permasnow.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "AbstractHorseEntityMixin",
     "JumpChasingGoalMixin",
     "PowderSnowBucketItemMixin"
   ],
