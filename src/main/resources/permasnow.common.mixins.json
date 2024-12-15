@@ -5,7 +5,8 @@
   "mixins": [
     "AbstractHorseEntityMixin",
     "JumpChasingGoalMixin",
-    "PowderSnowBucketItemMixin"
+    "PowderSnowBucketItemMixin",
+    "ShovelItemMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -41,6 +41,22 @@ public class ModBlocks {
         .pistonBehavior(PistonBehavior.DESTROY)
     )
   );
+  public static final Block THIN_SNOW = register(
+    "thin_snow",
+    new ThinSnowBlock(
+      AbstractBlock.Settings.create()
+        .mapColor(MapColor.WHITE)
+        .replaceable()
+        .solidBlock((state, world, pos) -> false)
+        .ticksRandomly()
+        .strength(0.1F)
+        .requiresTool()
+        .sounds(BlockSoundGroup.SNOW)
+        .blockVision((state, world, pos) -> false)
+        .pistonBehavior(PistonBehavior.DESTROY)
+        .noCollision()
+    )
+  );
 
   public static <T extends Block> T register(String id, T block) {
     return Registry.register(Registries.BLOCK, new Identifier(PermasnowMod.ID, id), block);
