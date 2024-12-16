@@ -1,6 +1,7 @@
 {
   "block.permasnow.eternal_ice": "Eternal Ice",
   "block.permasnow.eternal_snow": "Eternal Snow",
+  "item.permasnow.powder_snow_bottle": "Powder Snow in a Bottle",
   "itemGroup.permasnow.permasnow": "Permasnow",
 
   "modmenu.nameTranslation.solid_grass_block": "Permasnow",

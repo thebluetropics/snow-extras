@@ -4,6 +4,7 @@ import io.github.thebluetropics.permasnow.PermasnowMod;
 import io.github.thebluetropics.permasnow.block.ModBlocks;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
@@ -21,6 +22,13 @@ public class ModItems {
     new BlockItem(
       ModBlocks.ETERNAL_SNOW,
       new Item.Settings()
+    )
+  );
+  public static final Item POWDER_SNOW_BOTTLE = register(
+    "powder_snow_bottle",
+    new PowderSnowBottleItem(
+      new Item.Settings()
+        .recipeRemainder(Items.GLASS_BOTTLE)
     )
   );
 
