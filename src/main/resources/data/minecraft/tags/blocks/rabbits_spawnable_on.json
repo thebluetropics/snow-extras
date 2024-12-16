@@ -2,6 +2,7 @@
   "replace": false,
   "values": [
     "permasnow:eternal_snow",
-    "permasnow:thin_snow"
+    "permasnow:thin_snow",
+    "permasnow:eternal_thin_snow"
   ]
 }

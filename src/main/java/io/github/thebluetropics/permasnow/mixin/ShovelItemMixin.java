@@ -43,7 +43,7 @@ public class ShovelItemMixin {
 
     if (state.isOf(ModBlocks.ETERNAL_SNOW)) {
       if (Objects.equals(state.get(EternalSnowBlock.LAYERS), 1)) {
-        // TODO
+        world.setBlockState(pos, ModBlocks.ETERNAL_THIN_SNOW.getDefaultState(), Block.NOTIFY_ALL);
       } else {
         world.setBlockState(pos, state.with(EternalSnowBlock.LAYERS, state.get(EternalSnowBlock.LAYERS) - 1), Block.NOTIFY_ALL);
 
