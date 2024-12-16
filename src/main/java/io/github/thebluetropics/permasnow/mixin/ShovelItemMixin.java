@@ -1,8 +1,10 @@
 package io.github.thebluetropics.permasnow.mixin;
 
+import io.github.thebluetropics.permasnow.block.EternalSnowBlock;
 import io.github.thebluetropics.permasnow.block.ModBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.SnowBlock;
 import net.minecraft.item.ItemUsageContext;
 import net.minecraft.item.ShovelItem;
 import net.minecraft.util.ActionResult;
@@ -10,6 +12,8 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+
+import java.util.Objects;
 
 @Mixin(ShovelItem.class)
 public class ShovelItemMixin {
@@ -25,7 +29,27 @@ public class ShovelItemMixin {
     var state = world.getBlockState(pos);
 
     if (state.isOf(Blocks.SNOW)) {
-      world.setBlockState(pos, ModBlocks.THIN_SNOW.getDefaultState(), Block.NOTIFY_ALL);
+      if (Objects.equals(state.get(SnowBlock.LAYERS), 1)) {
+        world.setBlockState(pos, ModBlocks.THIN_SNOW.getDefaultState(), Block.NOTIFY_ALL);
+      } else {
+        world.setBlockState(pos, state.with(SnowBlock.LAYERS, state.get(SnowBlock.LAYERS) - 1), Block.NOTIFY_ALL);
+
+        // TODO: drop stack
+        // TODO: add particle
+      }
+
+      info.setReturnValue(ActionResult.SUCCESS);
+    }
+
+    if (state.isOf(ModBlocks.ETERNAL_SNOW)) {
+      if (Objects.equals(state.get(EternalSnowBlock.LAYERS), 1)) {
+        // TODO
+      } else {
+        world.setBlockState(pos, state.with(EternalSnowBlock.LAYERS, state.get(EternalSnowBlock.LAYERS) - 1), Block.NOTIFY_ALL);
+
+        // TODO: drop stack
+        // TODO: add particle
+      }
 
       info.setReturnValue(ActionResult.SUCCESS);
     }
