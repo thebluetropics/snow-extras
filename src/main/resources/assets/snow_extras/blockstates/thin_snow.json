@@ -1,0 +1,9 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "snow_extras:block/thin_snow"
+      }
+    }
+  ]
+}

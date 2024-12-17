@@ -1,0 +1,10 @@
+{
+  "block.snow_extras.eternal_ice": "Eternal Ice",
+  "block.snow_extras.eternal_snow": "Eternal Snow",
+  "item.snow_extras.powder_snow_bottle": "Powder Snow in a Bottle",
+  "itemGroup.snow_extras.snow_extras": "Snow Extras",
+
+  "modmenu.nameTranslation.snow_extras": "Snow Extras",
+  "modmenu.descriptionTranslation.modmenu": "Adds unmeltable cold stuff",
+  "modmenu.summaryTranslation.modmenu": "Adds unmeltable cold stuff"
+}

@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "package": "io.github.thebluetropics.snowextras.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "AbstractHorseEntityMixin",
+    "JumpChasingGoalMixin",
+    "PowderSnowBucketItemMixin",
+    "ShovelItemMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

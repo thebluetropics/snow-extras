@@ -1,8 +1,8 @@
 {
   "replace": false,
   "values": [
-    "permasnow:eternal_snow",
-    "permasnow:thin_snow",
-    "permasnow:eternal_thin_snow"
+    "snow_extras:eternal_snow",
+    "snow_extras:thin_snow",
+    "snow_extras:eternal_thin_snow"
   ]
 }

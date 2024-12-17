@@ -1,0 +1,365 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:alternatives",
+              "children": [
+                {
+                  "type": "minecraft:item",
+                  "name": "minecraft:snowball",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "snow_extras:eternal_snow",
+                      "properties": {
+                        "layers": "1"
+                      }
+                    }
+                  ],
+                  "functions": [
+                    {
+                      "function": "minecraft:set_count",
+                      "add": false,
+                      "count": 1.0
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "minecraft:snowball",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "snow_extras:eternal_snow",
+                      "properties": {
+                        "layers": "2"
+                      }
+                    }
+                  ],
+                  "functions": [
+                    {
+                      "function": "minecraft:set_count",
+                      "add": false,
+                      "count": 2.0
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "minecraft:snowball",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "snow_extras:eternal_snow",
+                      "properties": {
+                        "layers": "3"
+                      }
+                    }
+                  ],
+                  "functions": [
+                    {
+                      "function": "minecraft:set_count",
+                      "add": false,
+                      "count": 3.0
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "minecraft:snowball",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "snow_extras:eternal_snow",
+                      "properties": {
+                        "layers": "4"
+                      }
+                    }
+                  ],
+                  "functions": [
+                    {
+                      "function": "minecraft:set_count",
+                      "add": false,
+                      "count": 4.0
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "minecraft:snowball",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "snow_extras:eternal_snow",
+                      "properties": {
+                        "layers": "5"
+                      }
+                    }
+                  ],
+                  "functions": [
+                    {
+                      "function": "minecraft:set_count",
+                      "add": false,
+                      "count": 5.0
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "minecraft:snowball",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "snow_extras:eternal_snow",
+                      "properties": {
+                        "layers": "6"
+                      }
+                    }
+                  ],
+                  "functions": [
+                    {
+                      "function": "minecraft:set_count",
+                      "add": false,
+                      "count": 6.0
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "minecraft:snowball",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "snow_extras:eternal_snow",
+                      "properties": {
+                        "layers": "7"
+                      }
+                    }
+                  ],
+                  "functions": [
+                    {
+                      "function": "minecraft:set_count",
+                      "add": false,
+                      "count": 7.0
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "minecraft:snowball",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "snow_extras:eternal_snow",
+                      "properties": {
+                        "layers": "8"
+                      }
+                    }
+                  ],
+                  "functions": [
+                    {
+                      "function": "minecraft:set_count",
+                      "add": false,
+                      "count": 8.0
+                    }
+                  ]
+                }
+              ],
+              "conditions": [
+                {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "condition": "minecraft:match_tool",
+                    "predicate": {
+                      "predicates": {
+                        "minecraft:enchantments": [
+                          {
+                            "enchantment": "minecraft:silk_touch",
+                            "levels": {
+                              "min": 1
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "type": "minecraft:alternatives",
+              "children": [
+                {
+                  "type": "minecraft:item",
+                  "name": "snow_extras:eternal_snow",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "snow_extras:eternal_snow",
+                      "properties": {
+                        "layers": "1"
+                      }
+                    }
+                  ],
+                  "functions": [
+                    {
+                      "function": "minecraft:set_count",
+                      "add": false,
+                      "count": 1.0
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "snow_extras:eternal_snow",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "snow_extras:eternal_snow",
+                      "properties": {
+                        "layers": "2"
+                      }
+                    }
+                  ],
+                  "functions": [
+                    {
+                      "function": "minecraft:set_count",
+                      "add": false,
+                      "count": 2.0
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "snow_extras:eternal_snow",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "snow_extras:eternal_snow",
+                      "properties": {
+                        "layers": "3"
+                      }
+                    }
+                  ],
+                  "functions": [
+                    {
+                      "function": "minecraft:set_count",
+                      "add": false,
+                      "count": 3.0
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "snow_extras:eternal_snow",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "snow_extras:eternal_snow",
+                      "properties": {
+                        "layers": "4"
+                      }
+                    }
+                  ],
+                  "functions": [
+                    {
+                      "function": "minecraft:set_count",
+                      "add": false,
+                      "count": 4.0
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "snow_extras:eternal_snow",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "snow_extras:eternal_snow",
+                      "properties": {
+                        "layers": "5"
+                      }
+                    }
+                  ],
+                  "functions": [
+                    {
+                      "function": "minecraft:set_count",
+                      "add": false,
+                      "count": 5.0
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "snow_extras:eternal_snow",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "snow_extras:eternal_snow",
+                      "properties": {
+                        "layers": "6"
+                      }
+                    }
+                  ],
+                  "functions": [
+                    {
+                      "function": "minecraft:set_count",
+                      "add": false,
+                      "count": 6.0
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "snow_extras:eternal_snow",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "snow_extras:eternal_snow",
+                      "properties": {
+                        "layers": "7"
+                      }
+                    }
+                  ],
+                  "functions": [
+                    {
+                      "function": "minecraft:set_count",
+                      "add": false,
+                      "count": 7.0
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "snow_extras:eternal_snow",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "snow_extras:eternal_snow",
+                      "properties": {
+                        "layers": "8"
+                      }
+                    }
+                  ],
+                  "functions": [
+                    {
+                      "function": "minecraft:set_count",
+                      "add": false,
+                      "count": 8.0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

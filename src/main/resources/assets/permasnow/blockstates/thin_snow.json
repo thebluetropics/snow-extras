@@ -1,9 +1,0 @@
-{
-  "multipart": [
-    {
-      "apply": {
-        "model": "permasnow:block/thin_snow"
-      }
-    }
-  ]
-}

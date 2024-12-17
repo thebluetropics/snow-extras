@@ -3,7 +3,7 @@
   "id": "%mod_id%",
   "version": "%version%",
   "icon": "assets/%mod_id%/icon.png",
-  "name": "Permasnow",
+  "name": "Snow Extras",
   "description": "Adds unmeltable cold stuff",
   "authors": [
     {
@@ -15,9 +15,9 @@
     }
   ],
   "contact": {
-    "homepage": "https://github.com/thebluetropics/fabric-example-mod",
-    "sources": "https://github.com/thebluetropics/fabric-example-mod",
-    "issues": "https://github.com/thebluetropics/fabric-example-mod/issues"
+    "homepage": "https://github.com/thebluetropics/snow-extras",
+    "sources": "https://github.com/thebluetropics/snow-extras",
+    "issues": "https://github.com/thebluetropics/snow-extras/issues"
   },
   "contributors": [],
   "license": "MIT",
@@ -32,10 +32,10 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "io.github.thebluetropics.permasnow.PermasnowMod"
+      "io.github.thebluetropics.snowextras.SnowExtrasMod"
     ],
     "client": [
-      "io.github.thebluetropics.permasnow.client.PermasnowModClient"
+      "io.github.thebluetropics.snowextras.client.SnowExtrasModClient"
     ]
   },
   "mixins": [
