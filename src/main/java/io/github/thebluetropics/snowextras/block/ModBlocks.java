@@ -32,7 +32,7 @@ public class ModBlocks {
       AbstractBlock.Settings.create()
         .mapColor(MapColor.WHITE)
         .replaceable()
-        .notSolid()
+        .solidBlock((state, world, pos) -> false)
         .ticksRandomly()
         .strength(0.1f)
         .requiresTool()
