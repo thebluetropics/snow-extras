@@ -6,6 +6,7 @@
     "AbstractHorseEntityMixin",
     "JumpChasingGoalMixin",
     "PowderSnowBucketItemMixin",
+    "RaidMixin",
     "ShovelItemMixin"
   ],
   "injectors": {
