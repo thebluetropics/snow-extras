@@ -1,8 +1,10 @@
 package io.github.thebluetropics.snowextras.block;
 
+import io.github.thebluetropics.snowextras.item.ModItems;
 import net.minecraft.block.*;
 import net.minecraft.entity.ai.pathing.NavigationType;
 import net.minecraft.item.ItemPlacementContext;
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.server.world.ServerWorld;
@@ -95,5 +97,10 @@ public class ThinSnowBlock extends Block {
     // TODO
 
     return super.getPlacementState(context);
+  }
+
+  @Override
+  public ItemStack getPickStack(WorldView world, BlockPos pos, BlockState state) {
+    return new ItemStack(Items.SNOW);
   }
 }
