@@ -59,7 +59,7 @@ public class ModBlocks {
   );
   public static final Block ETERNAL_THIN_SNOW = register(
     "eternal_thin_snow",
-    new ThinSnowBlock(
+    new EternalThinSnowBlock(
       AbstractBlock.Settings.create()
         .mapColor(MapColor.WHITE)
         .replaceable()
