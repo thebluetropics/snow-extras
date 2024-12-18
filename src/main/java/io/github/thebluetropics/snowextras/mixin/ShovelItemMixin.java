@@ -27,6 +27,8 @@ public class ShovelItemMixin {
     var world = context.getWorld();
     var pos = context.getBlockPos();
     var state = world.getBlockState(pos);
+    var player = context.getPlayer();
+    var stack = context.getStack();
 
     if (state.isOf(Blocks.SNOW)) {
       if (Objects.equals(state.get(SnowBlock.LAYERS), 1)) {
@@ -34,7 +36,10 @@ public class ShovelItemMixin {
       } else {
         world.setBlockState(pos, state.with(SnowBlock.LAYERS, state.get(SnowBlock.LAYERS) - 1), Block.NOTIFY_ALL);
 
-        // TODO: drop stack
+        if (player != null && !player.isCreative()) {
+          Block.dropStacks(Blocks.SNOW.getDefaultState(), world, pos, null, player, stack);
+        }
+
         // TODO: add particle
       }
 
@@ -47,7 +52,10 @@ public class ShovelItemMixin {
       } else {
         world.setBlockState(pos, state.with(EternalSnowBlock.LAYERS, state.get(EternalSnowBlock.LAYERS) - 1), Block.NOTIFY_ALL);
 
-        // TODO: drop stack
+        if (player != null && !player.isCreative()) {
+          Block.dropStacks(ModBlocks.ETERNAL_SNOW.getDefaultState(), world, pos, null, player, stack);
+        }
+
         // TODO: add particle
       }
 
